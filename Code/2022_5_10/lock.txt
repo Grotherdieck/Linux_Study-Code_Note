@@ -1,0 +1,15 @@
+lock:
+    movb $0, %al
+    xchgb %al, mutex// 交换锁资源
+    if (寄存器al内的值 > 0)
+    {
+        return 0;// 申请锁成功
+    }
+    else 挂起等待;
+    // 等完了接着去申请锁
+    goto lock;
+
+unlock:
+    movb $1, mutex// 把1还回去
+    唤醒等待锁的进程;
+    return 0;

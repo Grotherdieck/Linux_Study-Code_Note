@@ -1,0 +1,4 @@
+Good morning, 标准输出
+hello printf
+hello fprintf
+hello fputs
