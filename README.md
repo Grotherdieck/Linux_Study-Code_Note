@@ -1,6 +1,6 @@
 
 # 一、这个仓库的内容是什么
-&emsp;&emsp;本仓库记录了我学习Linux系统编程、Linux网络编程写过的代码和笔记([Note文件夹](https://gitee.com/router123456/linux-study/tree/master/Notes))，以供参考和复习。
+&emsp;&emsp;本仓库记录了我学习Linux系统编程、Linux网络编程写过的代码和笔记([Note文件夹](https://github.com/Grotherdieck/Linux_Study-Code_Note/tree/main/Notes))，以供参考和复习。
 
 # 二、为什么要开源本仓库
 
