@@ -413,5 +413,100 @@ int main()
 
 <img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/20220518215029.png" style="zoom:80%;" />
 
+# 三、STL、智能指针与线程安全
+
+## 1 STL中的容器是否是线程安全
+
+&emsp;&emsp;不是. 原因是, ``STL``的设计初衷是将性能挖掘到极致, 而一旦涉及到加锁保证线程安全, 会对性能造成巨大的影响. 而且对于不同的容器, 加锁方式的不同, 性能可能也不同(例如hash表的锁表和锁桶). 因此``STL``默认不是线程安全. 如果需要在多线程环境下使用, 往往需要调用者自行保证线程安全。
+
+## 2 智能指针是否是线程安全
+
+&emsp;&emsp;对于``unique_ptr``, 由于只是在当前代码块范围内生效, 因此不涉及线程安全问题. 
+
+&emsp;&emsp;对于``shared_ptr``, 多个对象需要共用一个引用计数变量, 所以会存在线程安全问题. 但是标准库实现的时候考虑到了这 个问题, 基于原子操作(``CAS``)的方式保证``shared_ptr``能够高效, 原子的操作引用计数.
+
+# 四、其他的相关的锁
+
+- 悲观锁：在每次取数据时，总是担心数据会被其他线程修改，所以会在取数据前先加锁（读锁，写锁，行 锁等），当其他线程想要访问数据时，被阻塞挂起，我们现在写的锁都是悲观锁。
+- 乐观锁：每次取数据时候，总是乐观的认为数据不会被其他线程修改，因此不上锁。但是在更新数据前， 会判断其他数据在更新前有没有对数据进行修改。主要采用两种方式：版本号机制和CAS操作。MySQL中有乐观锁的使用。
+- 自旋锁：
+
+# 五、读者写者问题
+
+## 1 读者写者模型简介
+
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/20220524191210.png" style="zoom:80%;" />
+
+## 2 读者写者模型的基本操作
+
+phread库读写锁接口：
+
+初始化和销毁：
+
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/20220524191557.png" style="zoom:80%;" />
+
+以读者身份加锁：
+
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/20220524191636.png" style="zoom:80%;" />
+
+以写方式加锁：
+
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/20220524191716.png" style="zoom:80%;" />
+
+释放锁：
+
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/20220524191905.png" style="zoom:80%;" />
+
+&emsp;&emsp;读者写者在处理数据时，如果确定当前是读者，就用读方式加锁；如果确定当前是写者，就用写方式加锁。
+
+## 3 如何理解读者写者模型
+
+&emsp;&emsp;我们通过一段伪代码理解一下读写锁的原理：
+
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/20220524193859.png" style="zoom:80%;" />
+
+## 4 优先级问题
+
+&emsp;&emsp;从上面的示意伪代码中，并不能看出读者优先还是写者优先，是竞争锁的关系，但是实际设计代码时，我们经常采用读者优先或写者优先的策略：
+
+- 读者优先策略：读者和写者同时到来时，让读者先进入访问。
+- 写者优先策略：当读者和写者同时到来时，写者不一定能先跑，因为当前临界区中可能还有许多读者正在读，此时写者你进不去，所以它的策略是比当前写者晚来的所有读者都不能进入临界区访问，等到临界区中没有读者时，让写者先写入。
+
+&emsp;&emsp;上限的接口通常默认读者优先策略。
+
+&emsp;&emsp;但是我们读者写者的锁不是默认读者多写者少吗，如果读者一直来，写者不就是一直不能写入吗，那不就会出现写饥饿问题了吗。
+
+&emsp;&emsp;但是读者写者模型不就是为了处理读者多的情况嘛，为了保证读者不读到不同的数据；而且这里的写饥饿问题也在宏观角度其实并不会用时多久，可能就几秒，其实问题不大。
+
+# 五、挂起等待锁和自旋锁
+
+## 1 概念
+
+&emsp;	挂起是有成本的，挂起需要时间，唤醒也需要时间，如果等待锁时需要的时间很短，那么其实不值得挂起；如果等待锁预期需要的时间很长，那么确实应该挂起。
+
+&emsp;&emsp;如果不挂起，而是一直去查询锁的状态(类似轮询)，这种状态被称为自旋；而普通的去挂起等待就是挂起等待锁。
+
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/20220524201313.png" style="zoom:80%;" />
+
+&emsp;&emsp;自旋锁的本质：不断地通过循环检测锁的状态。
+
+&emsp;&emsp;那么线程如何得知自己会在临界资源中呆多少时间呢？线程肯定不知道啊，是写程序的人知道。所以选自旋锁还是挂起等待，显然是程序员的决定，我们前面的抢票逻辑就很适合自旋锁。
+
+## 2 自旋锁的接口
+
+初始化与销毁：
+
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/20220524201623.png" style="zoom:80%;" />
+
+加锁与解锁：
+
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/20220524201706.png" style="zoom:80%;" />
+
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/20220524201731.png" style="zoom:80%;" />
+
+&emsp;&emsp;使用时与挂起等待锁是一样的，不必我么自己手打while循环查询锁的状态。
+
+
+
 
 
