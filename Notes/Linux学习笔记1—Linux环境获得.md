@@ -4,7 +4,7 @@
 
 &emsp;&emsp;与``UNIX``不同的是，Linux内核的代码是开源的，并且Linux内核的代码是免费使用的，而非像UNIX一样需要收费使用。由于这个特性，很多的工程师和``hacker``参与进了``Linux``的研发并且为``Linux``内核的迭代提供了很多帮助，使得``Linux``由最早的可能只是``Linus``的一个学习``Minix``制作的操作系统内核"玩具"渐渐变成了拥有强大功能，能为用户提供稳定功能的操作系统内核程序。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220122112413.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122112413.png" style="zoom:80%;" />
 
 &emsp;&emsp;不同于``Windows``操作系统在运行过程中很可能出现蓝屏、死机等情况（开机时间一长这几乎是必然发生的），``Linux``操作系统的运行非常稳定，很少出现死机、宕机的情况，因此``Linux``无疑是十分适合作为需要长时间提供线上服务的互联网公司服务器的操作系统。
 
@@ -42,7 +42,7 @@
 
 &emsp;&emsp;想要获得``Linux``环境，一种方法是在``Windows``上装虚拟机，不过这样占用磁盘空间较大，且可能运行时较为卡顿；另一种方法是卸载Windows操作系统，安装一款适配当前架构的``Linux``发行版，但是``Windows``其实是我们比较熟悉的环境，且``Windows``的``GUI``做的还不错，对于日常使用来说十分便捷，在不熟悉``Linux``系统的情况下贸然卸载``Windows``风险很大,并且大部分游戏也是只兼容``Windows``系统，如下图Linus也曾为``win7``盛情点赞：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220122141729.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122141729.png" style="zoom:80%;" />
 
 &emsp;&emsp;还有一个解决方案就是购买云服务器，
 
@@ -54,15 +54,15 @@
 
 &emsp;&emsp;点击轻量应用服务器：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220122142507.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122142507.png" style="zoom:80%;" />
 
 &emsp;&emsp;进入如下界面：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220122142632.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122142632.png" style="zoom:80%;" />
 
 &emsp;&emsp;点击这个购买的服务器，进入下面界面：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122142844.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122142844.png)
 
 &emsp;&emsp;请记住自己的公网IP和实例ID,且不要透露，以免网络危险，点击重置密码设置一下密码，这里设置的密码就是``root``用户的密码,与公网IP记录在一起，至此，我们就算已经暂时租赁了这台云服务器。
 
@@ -80,11 +80,11 @@
 
 PS：我设置了背影颜色，在工具选项下的配色方案中可以修改,在A按钮后可以修改字体：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122145817.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122145817.png)
 
 
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122145908.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122145908.png)
 
 &emsp;&emsp;输入以下命令：
 
@@ -94,13 +94,13 @@ ssh root@(你的服务器的公网IP)
 
 &emsp;&emsp;它会要求我们输入密码
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220122144110.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122144110.png" style="zoom:80%;" />
 
 &emsp;&emsp;这时输入刚刚在官网设置好的密码就可以了。
 
 &emsp;&emsp;然后我们就进入了与操作系统交互的命令行。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122150012.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122150012.png)
 
 &emsp;&emsp;下面简单讲解一下Linux下的用户管理。
 
@@ -122,11 +122,11 @@ adduser test
 ls /home
 ```
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122150604.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122150604.png)
 
 &emsp;&emsp;现在的test是没有密码的，无法通过外界SSH登陆，我们使用指令``passwd test``为``test``用户增加密码：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122150751.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122150751.png)
 
 &emsp;&emsp;输入并确定密码即可。
 
@@ -134,7 +134,7 @@ ls /home
 
 &emsp;&emsp;删除用户，使用指令``userdel -r test``
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122150947.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122150947.png)
 
 ### 1.2 Xshell的复制粘贴
 
@@ -150,19 +150,19 @@ ls /home
 
 &emsp;&emsp;打开vscode的拓展，搜索Remote-SSH插件：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122151130.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122151130.png)
 
 &emsp;&emsp;安装后，左侧会有这个插件：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220122151405.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122151405.png" style="zoom:80%;" />
 
 &emsp;&emsp;点击后点：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122151525.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122151525.png)
 
 然后点第一个：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122151557.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122151557.png)
 
 &emsp;&emsp;进入后按如下格式输入:
 
@@ -174,23 +174,23 @@ Host 服务名，这个可以随便输入
 
 &emsp;&emsp;然后点这个东西链接用户就行
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122151844.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122151844.png)
 
 &emsp;&emsp;输入对应用户的密码：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122152255.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122152255.png)
 
 &emsp;&emsp;点这个+新建一个终端：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122152339.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122152339.png)
 
 &emsp;&emsp;创建结果如下：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122152429.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122152429.png)
 
 &emsp;&emsp;然后正常点打开文件夹像普通的vscode一样操作就好了，下面的终端就是命令行。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122152600.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122152600.png)
 
 &emsp;&emsp;这个方法的好处是你可以在云服务器上安装vscode的各种插件，并且很方便的使用vsode的调试功能，官方都有文档，对于C/C++，这里提供如下：[gcc on Linux](https://code.visualstudio.com/docs/cpp/config-linux)
 
@@ -202,29 +202,29 @@ Host 服务名，这个可以随便输入
 
 &emsp;&emsp;打开以后大概是这个样子：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122153633.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122153633.png)
 
 &emsp;&emsp;点``Session``,
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220122153726.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122153726.png" style="zoom:80%;" />
 
 &emsp;&emsp;点``SSH``：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220122154759.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122154759.png" style="zoom:80%;" />
 
 &emsp;&emsp;host输入公网IP地址 username输入要登录的用户名，然后点ok。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220122155004.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122155004.png" style="zoom:80%;" />
 
 &emsp;&emsp;输入用户密码即可。
 
 &emsp;&emsp;然后就ok了
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122154450.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122154450.png)
 
 &emsp;&emsp;这个的好处是可以直接像``windows``一样图形化的看目录和文件，并且上传文件从服务器下载文件都比较方便：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122155450.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122155450.png)
 
 &emsp;&emsp;缺点是全英文的，需要英文水平比较好。
 
@@ -232,15 +232,15 @@ Host 服务名，这个可以随便输入
 
 &emsp;&emsp;在命令行中，``touch 文件名``创建一个文件，然后``nano 文件名``进入编写文件。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122161736.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122161736.png)
 
 &emsp;&emsp;然后``ctrl + x``退出；
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122161812.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122161812.png)
 
 &emsp;&emsp;按Y保存。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122161853.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122161853.png)
 
 &emsp;&emsp;然后按回车退出。
 
@@ -248,5 +248,5 @@ Host 服务名，这个可以随便输入
 
 &emsp;&emsp;然后输入``./a.out``即可运行
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122162026.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122162026.png)
 

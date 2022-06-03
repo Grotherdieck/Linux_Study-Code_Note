@@ -1,4 +1,4 @@
-﻿- 本人的LeetCode账号：[魔术师的徒弟](https://leetcode-cn.com/u/mo-zhu-shi-de-tu-di/)，欢迎关注获取每日一题题解，快来一起刷题呀~
+﻿﻿- 本人的LeetCode账号：[魔术师的徒弟](https://leetcode-cn.com/u/mo-zhu-shi-de-tu-di/)，欢迎关注获取每日一题题解，快来一起刷题呀~
 - 本人Gitee账号：[路由器](https://gitee.com/router123456)，欢迎关注获取博客内容源码。
 @[toc]
 # 一、冯诺依曼体系结构
@@ -12,7 +12,7 @@
 
 &emsp;&emsp;离CPU越近的设备，存储和读写的效率越高，但是单价成本也会更贵：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220226163715.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220226163715.png" style="zoom:80%;" />
 
 &emsp;&emsp;比如几百个G的磁盘，是几百块钱，然而16个G的内存的价格就是几百块钱。
 
@@ -96,7 +96,7 @@
 
 
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308183835.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308183835.png" style="zoom:80%;" />
 
 # 三、进程的概念
 
@@ -116,17 +116,17 @@
 
 &emsp;&emsp;Windows中，可以打开任务管理器查看进程，Linux中，可以用``ps axj``指令来查看进程信息，我们补充上``grep``行过滤工具来查看：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220301194654.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220301194654.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220301194510.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220301194510.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220301194558.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220301194558.png" style="zoom:80%;" />
 
 ## 4 进程与程序
 
 &emsp;&emsp;程序本质其实就是一个文件，可执行程序的执行的过程就是把程序加载到内存中且为这个进程创建一个进程控制块，从这个角度上来看，**进程就是程序文件内容再加上操作系统创建的与进程相关的数据结构**，在``linux``中，也就是加上一个``task_struct``。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220301200121.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220301200121.png" style="zoom:80%;" />
 
 **CPU和进程交互**
 
@@ -154,31 +154,31 @@
 
 &emsp;&emsp;下面实现一个能够查看``pid``的程序，先试用man查看一下``getpid``
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220301201149.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220301201149.png" style="zoom:80%;" />
 
 实现程序：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220301202447.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220301202447.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220301201621.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220301201621.png" style="zoom:80%;" />
 
 ``kill -9 pid``发送9号信号干掉``pid``对应进程
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220301201706.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220301201706.png" style="zoom:80%;" />
 
 ``getppid``可以查看父进程的``pid``，在命令行上运行的程序其父进程一般都是``bash``.
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220301202329.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220301202329.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220301202200.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220301202200.png" style="zoom:80%;" />
 
 ### II 状态
 
 &emsp;&emsp;状态一行中，退出码是被父进程获得的一个有符号数字，即C/C++程序主函数最后的``return``后面的那个数字，可以使用``echo $?``获得最近一次进程结束的退出码。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220301202753.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220301202753.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220301202720.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220301202720.png" style="zoom:80%;" />
 
 &emsp;&emsp;任务状态：进程所处的一些状态，后续我们会通过PCB所处的位置来进一步理解任务状态。
 
@@ -238,17 +238,17 @@
 
 &emsp;&emsp;这个目录允许我们以文件的方式查看进程。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220301223128.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220301223128.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220301223434.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220301223434.png" style="zoom:80%;" />
 
 &emsp;&emsp;这些蓝色字体的数字目录就是一个进程的目录，数字就是其``pid``。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220301223631.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220301223631.png" style="zoom:80%;" />
 
 &emsp;&emsp;``ls /proc/pid -al``，以目录中的文件的形式详细查看查进程的有关信息。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220301213940.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220301213940.png" style="zoom:80%;" />
 
 &emsp;&emsp;``exe``表明我们的进程当前正在执行谁，即进程对应的可执行程序是谁。
 
@@ -256,7 +256,7 @@
 
 &emsp;&emsp;当结束对应进程后，查询对应的进程目录发现这个目录也就没了。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220301214137.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220301214137.png" style="zoom:80%;" />
 
 # 五、Linux中创建进程的函数
 
@@ -264,25 +264,25 @@
 
 &emsp;&emsp;Linux中，使用fork函数（系统调用）可以创建子进程，头文件``<unistd.h>``.
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220301224926.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220301224926.png" style="zoom:80%;" />
 
 &emsp;&emsp;怎么验证它fork后有两个进程呢？
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220301225131.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220301225131.png" style="zoom:80%;" />
 
 &emsp;&emsp;如果只有一个执行流，那么这个函数if和else应该只能进一个，从而只能打印一个指令，但是实际上：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220301225232.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220301225232.png" style="zoom:80%;" />
 
 &emsp;&emsp;说明现在有两个运行流在程序里，一个运行了上面那个，另一个运行了下面那个，不然没法解释为啥if和else都进入了。
 
 &emsp;&emsp;下面这段程序：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220301225718.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220301225718.png" style="zoom:80%;" />
 
 &emsp;&emsp;运行结果每次都会打印两行东西出来：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220301225830.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220301225830.png" style="zoom:80%;" />
 
 &emsp;&emsp;说明当前有两个执行流在执行。
 
@@ -290,13 +290,13 @@
 
 &emsp;&emsp;不退出vim执行命令：底行模式下使用``! + 命令``。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308192531.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308192531.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308192728.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308192728.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308192823.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308192823.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308192053.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308192053.png" style="zoom:80%;" />
 
 &emsp;&emsp;如何理解fork创建子进程？
 
@@ -326,7 +326,7 @@
 
 ## 3 fork的返回值
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308194358.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308194358.png" style="zoom:80%;" />
 
 &emsp;&emsp;``pid_t``可以理解成一个整数。
 
@@ -334,9 +334,9 @@
 
 &emsp;&emsp;fork失败返回<0的负数；fork成功给父进程返回子进程的``pid``，给子进程执行流返回0.
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308194622.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308194622.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308194703.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308194703.png" style="zoom:80%;" />
 
 1、如何理解有两个返回值？
 
@@ -357,9 +357,9 @@ pid_t fork()
 
 ## 4 多进程代码初识
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308200429.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308200429.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308200348.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308200348.png" style="zoom:80%;" />
 
 &emsp;&emsp;fork之后，父子进程谁先执行？答案是不确定的，和CPU平台有关。
 
@@ -399,11 +399,11 @@ static const char * const task_state_array[] = {
 
 &emsp;&emsp;**R(Running)：运行状态**。处于运行状态的进程一定正在占有CPU吗？不一定，它可能处于运行队列中正在排队。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308201403.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308201403.png" style="zoom:80%;" />
 
 &emsp;&emsp;**S睡眠状态 (sleeping)和D磁盘休眠状态 (disk sleep)**：当我们想完成某种任务，但是任务条件不具备，需要进程进行某种等待时，就处于S或D状态。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308202210.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308202210.png" style="zoom:80%;" />
 
 &emsp;&emsp;所有的进程，在运行的时候，可能由于运行需要，可以放在不同的队列中，在不同的队列中，所处状态不同。
 
@@ -415,11 +415,11 @@ static const char * const task_state_array[] = {
 
 S状态进程示例：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308221119.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308221119.png" style="zoom:80%;" />
 
 &emsp;&emsp;这个进程就是处于经典的等待状态，不断的等待``sleep``结束。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308221241.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308221241.png" style="zoom:80%;" />
 
 &emsp;&emsp;处于S状态的进程是可以直接被``ctrl + c``中断的，是一种可中断睡眠，是一种浅度睡眠。
 
@@ -427,7 +427,7 @@ D状态示例：
 
 &emsp;&emsp;D状态是一种不可中断睡眠，即所谓的深度睡眠，下面是它的一个例子：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308205933.png" style="zoom:67%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308205933.png" style="zoom:67%;" />
 
 &emsp;&emsp;显然这个事情的根源在于操作系统干掉了等待磁盘回复的进程。
 
@@ -467,7 +467,7 @@ D状态示例：
 
 与操作系统书的状态对比：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308230453.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308230453.png" style="zoom:80%;" />
 
 ## 2 状态的验证
 
@@ -475,15 +475,15 @@ D状态示例：
 
 &emsp;&emsp;死循环就是典型的R状态。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308213307.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308213307.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308212736.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308212736.png" style="zoom:80%;" />
 
 **S状态**:
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308212429.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308212429.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308212324.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308212324.png" style="zoom:80%;" />
 
 &emsp;&emsp;当我们的程序有IO时，但是因为外设的速度太慢了，很多时候IO都在等待外设就绪，所以大部分状态都处于S状态。
 
@@ -491,7 +491,7 @@ D状态示例：
 
 &emsp;&emsp;基本信号操作表：``kill -l``.
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308212901.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308212901.png" style="zoom:80%;" />
 
 ``kill -19 pid``：向进程发送暂停信号。
 
@@ -499,15 +499,15 @@ D状态示例：
 
 &emsp;&emsp;暂停，注意此时的T状态没有``+``.
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308221641.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308221641.png" style="zoom:80%;" />
 
 &emsp;&emsp;恢复，因为在输出，所以大部分时间还是处于S状态，此时没有``'+'``，表示它变为**后台程序**了。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308221749.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308221749.png" style="zoom:80%;" />
 
 &emsp;&emsp;``kill -9 pid``杀掉这个后台程序。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308221842.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308221842.png" style="zoom:80%;" />
 
 &emsp;&emsp;状态为S+的程序是在前台运行的进程处于睡眠状态。
 
@@ -517,9 +517,9 @@ D状态示例：
 
 &emsp;&emsp;运行程序时后面加一个``&``也可以进入后台进程运行模式。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308222708.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308222708.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308222803.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308222803.png" style="zoom:80%;" />
 
 **z：僵尸进程**
 
@@ -529,7 +529,7 @@ D状态示例：
 
 &emsp;&emsp;思路就是利用fork()创建子进程，然后子进程一直打印消息，父进程休眠啥也不干，然后``kill``命令杀掉子进程，此时父进程在休眠，不会回收子进程，就会出现子进程是僵尸进程了。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308223149.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308223149.png" style="zoom:80%;" />
 
 &emsp;&emsp;一个不断检查进程的命令行脚本：
 
@@ -539,35 +539,35 @@ while :; do ps axj | head -1 &&  ps axj | grep Ztest | grep -v grep; sleep 1; ec
 
 &emsp;&emsp;不加``grep -v grep``的时候：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308223516.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308223516.png" style="zoom:80%;" />
 
 &emsp;&emsp;加了``grep -v grep``可以不显示那个``grep``本身。
 
 &emsp;&emsp;总体框架如下：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308224255.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308224255.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308224411.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308224411.png" style="zoom:80%;" />
 
 &emsp;&emsp;父进程休眠时杀掉子进程，子进程变成僵尸进程，这里出现的``<defunct>``表示无用的，不再存在的，死者，死人。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308224531.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308224531.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308224820.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308224820.png" style="zoom:80%;" />
 
 &emsp;&emsp;父进程退出后，子进程被回收。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308224601.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308224601.png" style="zoom:80%;" />
 
 &emsp;&emsp;父进程正常退出时，操作系统会回收僵尸子进程，但是若父进程一直不退出，但是又不回收子进程，僵尸进程就会造成资源浪费，所以在Linux中我们要想办法及时回收僵尸进程。
 
 &emsp;&emsp;父进程先挂了怎么办，如下代码：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308225638.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308225638.png" style="zoom:80%;" />
 
 &emsp;&emsp;此子进程会被1号进程（操作系统）领养，此时这个子进程称为孤儿进程，保证父进程离开后的子进程能被正常回收。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220308230143.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220308230143.png" style="zoom:80%;" />
 
 # 七、进程优先级
 
@@ -587,9 +587,9 @@ while :; do ps axj | head -1 &&  ps axj | grep Ztest | grep -v grep; sleep 1; ec
 
 Linux中的优先级值越小，优先级越高。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312093714.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312093714.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312124605.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312124605.png" style="zoom:80%;" />
 
 &emsp;&emsp;``NI``（NICE）是优先级的修正数据，``NI``可以用来表示优先级变化了多少。
 
@@ -601,43 +601,43 @@ Linux中的优先级值越小，优先级越高。
 
 &emsp;&emsp;有很多调整优先级的方案，如一些调整优先级的接口：``sched_get_priority_max``接口，还有一些命令：``NICE``命令、运行时的``RENICE``命令，但是不经常用，因为我们不比操作系统懂进程的优先级分配。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312124908.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312124908.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312094305.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312094305.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312125118.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312125118.png" style="zoom:80%;" />
 
 实验：``top``命令设置优先级。
 
 &emsp;&emsp;按``top``进入一个界面，然后按``r``，然后输入进程的``pid``:
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312125816.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312125816.png" style="zoom:80%;" />
 
 &emsp;&emsp;然后回车，新出现的界面中设置``NICE``值即可。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312125909.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312125909.png" style="zoom:80%;" />
 
 &emsp;&emsp;然后q退出，来看看现在的优先级：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312130032.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312130032.png" style="zoom:80%;" />
 
 &emsp;&emsp;发现变成了90，那么我们如果再修改一个NICE值为5呢？（如果再次设置出现permission denied，则使用``sudo``）
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312130443.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312130443.png" style="zoom:80%;" />
 
 &emsp;&emsp;虽然``PRI(NEW) = PRI(OLD) + NICE``，但是``PRI(OLD)``一般默认是80，我们下面修改NICE为-10，再次验证：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312131200.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312131200.png" style="zoom:80%;" />
 
 **NICE取值范围实验**：
 
 &emsp;&emsp;直接设置``NICE = -100``，发现NICE最多变成``-20``:
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312131456.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312131456.png" style="zoom:80%;" />
 
 &emsp;&emsp;设置``NICE = 100``，发现NICE最多变成19：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312131628.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312131628.png" style="zoom:80%;" />
 
 **NICE为何是一个先对比较小的范围呢？**
 
@@ -658,11 +658,11 @@ Linux中的优先级值越小，优先级越高。
 
 &emsp;&emsp;首先我们编一个程序，代码如下：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312133132.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312133132.png" style="zoom:80%;" />
 
 &emsp;&emsp;运行起来：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312133200.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312133200.png" style="zoom:80%;" />
 
 &emsp;&emsp;我们自己写的程序、命令、工具本质都是一个可以执行的文件，所以我们的``myproc``也是命令。
 
@@ -672,7 +672,7 @@ Linux中的优先级值越小，优先级越高。
 
 &emsp;&emsp;``PATH``是一个类似C语言中变量的东西，如果要查看``PATH``的内容，直接``echo $PATH``即可。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312134411.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312134411.png" style="zoom:80%;" />
 
 &emsp;&emsp;文件夹以``:``分割。
 
@@ -686,35 +686,35 @@ Linux中的优先级值越小，优先级越高。
 
 &emsp;&emsp;所以不要直接``export PATH=你的路径``，这样直接就把``PATH``设置为只有你的路径了，什么东西都找不到了，不过你可以退出``xshell``重新链接即可。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312135539.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312135539.png" style="zoom:80%;" />
 
 &emsp;&emsp;重连就好了：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312135618.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312135618.png" style="zoom:80%;" />
 
 &emsp;&emsp;正确的格式应该是：``export PATH=$PATH:你自己要包含可执行程序的路径``.
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312135850.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312135850.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312135910.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312135910.png" style="zoom:80%;" />
 
 &emsp;&emsp;具体修改登陆后的环境变量还有一个方法：``vim ~/.bash_profile``在这里头改每次登陆的环境变量。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312140218.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312140218.png" style="zoom:80%;" />
 
 ## 2 Windows下的环境变量
 
 &emsp;&emsp;Windows也有环境变量，右击此电脑，打开属性，找到高级属性设置：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312171428.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312171428.png" style="zoom:80%;" />
 
 &emsp;&emsp;找到``PATH``:
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312171717.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312171717.png" style="zoom:80%;" />
 
 &emsp;&emsp;双击打开：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312171846.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312171846.png" style="zoom:80%;" />
 
 &emsp;&emsp;这就是我们的``Windows``下的``PATH``环境变量。
 
@@ -732,19 +732,19 @@ Linux中的优先级值越小，优先级越高。
 
 &emsp;&emsp;存储的是当期用户的默认工作目录。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312173026.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312173026.png" style="zoom:80%;" />
 
 &emsp;&emsp;不同用户登陆的工作目录不同就是因为每一个用户的``HOME``环境变量不同。
 
 4 SHELL环境变量
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312181633.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312181633.png" style="zoom:80%;" />
 
 &emsp;&emsp;查看我们的``shell``的版本。
 
 ## 4 env命令—看系统中的环境变量数据
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312181853.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312181853.png" style="zoom:80%;" />
 
 主机名：``HOSTNAME``.
 
@@ -761,47 +761,47 @@ Linux中的优先级值越小，优先级越高。
 
 &emsp;&emsp;如我们可以直接在命令行定义变量：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312183318.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312183318.png" style="zoom:80%;" />
 
 &emsp;&emsp;重新登陆后就没有了：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312183448.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312183448.png" style="zoom:80%;" />
 
 &emsp;&emsp;所以写命令行脚本其实就是定义本地变量。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312183739.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312183739.png" style="zoom:80%;" />
 
 - ``set``：显示**本地变量和环境变量**。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312183904.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312183904.png" style="zoom:80%;" />
 
 - ``export``：把本地变量加入环境变量（内存级）。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312191213.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312191213.png" style="zoom:80%;" />
 
 - ``unset``：取消本地或环境变量。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312191012.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312191012.png" style="zoom:80%;" />
 
 ## 6 命令行参数与C程序获取环境变量
 
 &emsp;&emsp;学C语言时我们就知道，``main``函数是可以携带参数的。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312191632.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312191632.png" style="zoom:80%;" />
 
 &emsp;&emsp;``argv``是个``char*``类型的指针数组，数组元素有``argc``个。
 
 &emsp;&emsp;一段代码打印一下数组内容：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312191937.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312191937.png" style="zoom:80%;" />
 
 &emsp;&emsp;直接运行的结果：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312192107.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312192107.png" style="zoom:80%;" />
 
 &emsp;&emsp;携带``-a``、``-b``、``-c``的参数时：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312192215.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312192215.png" style="zoom:80%;" />
 
 &emsp;&emsp;我们每个空格两端都视为一个字符串，程序获得的参数是``"./myproc" "-a" "-b" "-c" "-d"``.
 
@@ -813,25 +813,25 @@ Linux中的优先级值越小，优先级越高。
 
 &emsp;&emsp;一个简单的程序示例：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312193632.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312193632.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312193729.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312193729.png" style="zoom:80%;" />
 
 &emsp;&emsp;选项的底层使用的就是命令行参数，这便是命令行参数的意义。
 
 &emsp;&emsp;实际上，main函数的参数可以有3个，最后一个就是环境变量。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312194416.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312194416.png" style="zoom:80%;" />
 
 &emsp;&emsp;每个程序都会收到一张环境表，环境表是一个字符指针数组，每个指针指向一个以’\0’结尾的环境字符串，内容就是其父进程的环境变量。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312195738.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312195738.png" style="zoom:80%;" />
 
 &emsp;&emsp;一个示例程序：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312195227.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312195227.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312195344.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312195344.png" style="zoom:80%;" />
 
 ## 7 C程序获取环境变量的方法
 
@@ -847,15 +847,15 @@ II extern char** environ
 
 &emsp;&emsp;另一种获取环境变量的方法是通过系统系统的二级指针``environ``.
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312195846.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312195846.png" style="zoom:80%;" />
 
 &emsp;&emsp;这个二级指针其实就是指向那个指针数组的开头元素，所以环境变量的组织结构就是这样的：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312195946.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312195946.png" style="zoom:80%;" />
 
 &emsp;&emsp;所以原本的程序可以改成这样：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312200316.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312200316.png" style="zoom:80%;" />
 
 &emsp;&emsp;那如果main函数参数都没有，可以传参给main函数吗？
 
@@ -865,13 +865,13 @@ II extern char** environ
 
 &emsp;&emsp;不过获取环境变量的最常见方法还是``getenv``.
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312200842.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312200842.png" style="zoom:80%;" />
 
 &emsp;&emsp;使用示例程序：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312201238.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312201238.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312201203.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312201203.png" style="zoom:80%;" />
 
 &emsp;&emsp;自己设计一个``getenv``也很简单，遍历那个表通过``strstr``找对应字符串的子串，找到了返回即可。
 
@@ -883,9 +883,9 @@ II extern char** environ
 
 &emsp;&emsp;**所以环境变量有全局属性的原因是环境变量会被子进程继承**，本地变量则不能被子进程继承，我们验证如下：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312202708.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312202708.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312202909.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312202909.png" style="zoom:80%;" />
 
 &emsp;&emsp;从bash开始，bash设置的环境变量都会被子进程全部继承，所以环境变量可以帮助我们的进程做一些查找功能等。
 
@@ -899,23 +899,23 @@ II extern char** environ
 
 &emsp;&emsp;在学习C/C++时，我们认为C程序的内存空间大致是这样分布的：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312205459.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312205459.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312211625.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312211625.png" style="zoom:80%;" />
 
 &emsp;&emsp;一点验证：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312212048.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312212048.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312212027.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312212027.png" style="zoom:80%;" />
 
 &emsp;&emsp;堆区和栈区之间地址大量镂空，说明它们之间有大量的空间。
 
 &emsp;&emsp;看下面一个程序：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312213208.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312213208.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220312213316.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220312213316.png" style="zoom:80%;" />
 
 &emsp;&emsp;这里的原因当然是因为写时拷贝，但是竟然这**俩拷贝了的地址居然没变**。
 
@@ -967,13 +967,13 @@ struct mm_struct
 
 &emsp;&emsp;页表是操作系统给每个进程维护的一张表，左侧是虚拟地址，右侧是物理地址，页表的作用是把虚拟地址转化为物理地址。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220314194837.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220314194837.png" style="zoom:80%;" />
 
 ## 3 为什么需要地址空间
 
 &emsp;&emsp;加了一个中间层是更加适合管理的，如果直接让进程访问物理内存可能出很多问题。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220314195334.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220314195334.png" style="zoom:80%;" />
 
 &emsp;&emsp;直接访问物理内存的话进程直接修改其他进程的代码和数据怎么办呢？这就非常难管理。
 
@@ -1001,32 +1001,31 @@ struct mm_struct
 
 - 站在CPU和应用层的角度，进程可以看做统一使用4GB空间而且每个空间区域的相对位置是比较确定的，这样程序的代码和数据都可以被加载到物理内存的任意位置，反正有页表的映射。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220314205715.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220314205715.png" style="zoom:80%;" />
 
 &emsp;&emsp;OS最终这样设计的目的，达到一个目标：每个进程都认为自己是独占系统资源的。
 
 &emsp;&emsp;所以之前的代码得到同样的地址就是因为：子进程创建时，同样创建和父进程类似的PCB MM_STRUCT都类似，所以一开始父进程和子进程都指向同一个数字，所以值也相同，虚拟地址也相同；当子进程写时，发生写时拷贝，然后重新建立页表映射，把那个子进程的虚拟地址映射到新的拷贝后的变量的物理地址。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220314210909.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220314210909.png" style="zoom:80%;" />
 
 &emsp;&emsp;在虚拟内存和页表的视角下，代码区共享不过就是两个虚拟地址都映射向同一块物理内存地址罢了。
 
 &emsp;&emsp;所以所有的只读的数据，一般只有一份，这样系统只需要维护一份，成本最低，所以就让两个虚拟地址都相同，这样映射到的物理地址自然也是同一个。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220314211215.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220314211215.png" style="zoom:80%;" />
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220314211406.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220314211406.png" style="zoom:80%;" />
 
 &emsp;&emsp;命令行参数和环境变量的地址：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220314212244.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220314212244.png" style="zoom:80%;" />
 
 &emsp;&emsp;发现命令行参数在栈上面，环境变量更在命令行参数的上方。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220314212351.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220314212351.png" style="zoom:80%;" />
 
 &emsp;&emsp;Linux中，有40个运行队列（和-20~19个数对应），这样就可以按下标作为优先级去遍历队列了。
-
 
 
 

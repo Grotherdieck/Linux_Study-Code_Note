@@ -2,11 +2,11 @@
 
 &emsp;&emsp;显示用户当前所在的目录。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122164111.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122164111.png)
 
 &emsp;&emsp;这里的``/``是路径分割符，``Windows``下使用的是反斜杠：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122120726.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122120726.png)
 
 # ls指令
 
@@ -18,13 +18,13 @@
 
 &emsp;&emsp;直接使用``ls``会查看当前目录下有那些文件（只显示文件名）：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122164323.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122164323.png)
 
 ## 2 ls -l
 
 &emsp;&emsp;``ls - l``会以列表形式显示文件的更多属性，空文件里也有空间，因为要标记这个文件的文件名、创建时间、文件大小等等，
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122164449.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122164449.png)
 
 &emsp;&emsp;从``Router``起分别是文件所属用户、文件大小、最后更改时间。
 
@@ -32,33 +32,33 @@
 
 &emsp;&emsp;``ls - a``会追加显示隐藏文件：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122164701.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122164701.png)
 
 &emsp;&emsp;``ls -a``和``ls -l``可以合并使用，显示隐藏文件和普通文件的更多属性：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122165223.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122165223.png)
 
 &emsp;&emsp;这里``d``开头的是目录文件(Linux下一切都是文件),``-``开头的是普通文件。
 
 &emsp;&emsp;下面简单介绍Linux下的隐藏文件，Linux下，``.``开头的文件就是隐藏文件，``ls -a``其实和``windows``下的这个功能类似：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122122140.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122122140.png)
 
 &emsp;&emsp;这里的``.``是当前路径的目录文件，``..``是上一级的目录文件，证明如下：
 
 &emsp;&emsp;补充一下，``cd 路径名``可以进入对应路径，我们配合``pwd``来看看:
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122165447.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122165447.png)
 
 &emsp;&emsp;所以上篇博客里的``./a.out``就是告诉系统运行的``a.out``是当前路径下的``a.out``
 
 &emsp;&emsp;根目录，我们一直``cd ..``回退到上一级目录，发现到了一个``/``就回退不动了：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122123007.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122123007.png)
 
 &emsp;&emsp;这个``/``称为Linux下的根目录，大部分的操作系统组织文件的数据结构是一颗多叉树，自然也有根的概念。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220122123154.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220122123154.png)
 
 &emsp;&emsp;如果想要按照数装结构展示文件，可以安装``tree``
 
@@ -66,25 +66,25 @@
 
 &emsp;&emsp;首先化身``root``,然后``yum install -y tree``，如果失败了，说命名要更新软件包，运行``yum install -y install epel-release``，然后再``yum install -y tree``,然后可以执行``tree``功能：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123203603.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123203603.png)
 
 &emsp;&emsp;默认是以当前目录以根节点然后展示树装文件结构。后面也可以跟绝对路径。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123203831.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123203831.png)
 
 &emsp;&emsp;还可以用``ls -R 目录名``递归的展示子目录及文件信息，作用与``tree``类似，只有图形部分不太一样：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123205202.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123205202.png)
 
 ## 5 ls -d
 
 &emsp;&emsp;默认情况下，``ls``指令作用于目录会显示目录里面的内容，而非目录的信息本身，验证如下：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123204401.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123204401.png)
 
 &emsp;&emsp;如果你想看的是这个目录的信息而非目录本身，就可以使用``ls -d``(一般还要追加上``-l``以显示详细信息)
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123204801.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123204801.png)
 
 ## 6 其他备注选项
 
@@ -103,11 +103,11 @@
 
 &emsp;&emsp;使用``which``可以查看特定命令处于的路径：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123210942.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123210942.png)
 
 &emsp;&emsp;这些指令本身其实也是程序，我们可以用ls指令查看如下:
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123211241.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123211241.png)
 
 &emsp;&emsp;查看详细信息后，发现这个指令程序本身就是一个可执行文件：``Windows``下的``.exe``
 
@@ -115,7 +115,7 @@
 
 &emsp;&emsp;我们可以使用``alias``指令自己定制别名：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123212025.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123212025.png)
 
 &emsp;&emsp;修改后的别名仅在这次会话有效，即仅在本次登陆有效。尽量不要永久定义别名，会污染别名池。
 
@@ -163,7 +163,7 @@
 
 &emsp;&emsp;由于出于不同目录下时，不同目录的上级目录很有可能不同，显然相对路径并不具有唯一性，显然从不同目录开始要找某个文件，有很多条不同的相对路径都能找到这个文件，所以相对路径并不能唯一的标识一个文件。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123095737.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123095737.png)
 
 &emsp;&emsp;这里``./a.out``使用的就是一种简单的相对路径。
 
@@ -208,11 +208,11 @@
 
 &emsp;&emsp;普通用户的工作目录：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123101233.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123101233.png)
 
 &emsp;&emsp;root用户的工作目录：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123101528.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123101528.png)
 
 
 
@@ -222,23 +222,23 @@
 
 &emsp;&emsp;windows下的用户工作路径：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220123101644.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123101644.png" style="zoom:80%;" />
 
-&emsp;&emsp;里头我们这个用户的桌面。
+&emsp;&emsp;里头有我们这个用户的桌面。
 
 # touch指令—创建文件更新文件时间信息
 
 &emsp;&emsp;``touch``指令可以创建普通文件，语法``touch 文件名``。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123101850.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123101850.png)
 
 &emsp;&emsp;touch还可以更改文件的最近修改时间。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123101959.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123101959.png)
 
 &emsp;&emsp;查看文件属性：``stat 文件名``
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220123104123.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123104123.png" style="zoom:80%;" />
 
 &emsp;&emsp;这里的Access Modify Change分别是:
 
@@ -254,21 +254,21 @@
 
 &emsp;&emsp;使用``cat``指令访问内容，不会修改文件内容和文件属性，只有Access改变了。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123102212.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123102212.png)
 
 &emsp;&emsp;使用``date >> myfile.txt``(下面会介绍)直接把日期信息加入文件而不访问文件;
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123104407.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123104407.png)
 
 &emsp;&emsp;可以发现Access没变，但是Modify和Change变了
 
 &emsp;&emsp;使用``mv``指令(下面会介绍)改名，修改``Change``属性，但是Access和Modify不会改变：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123104651.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123104651.png)
 
 &emsp;&emsp;``touch``一下观察更改情况：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124180428.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124180428.png)
 
 &emsp;&emsp;发现``touch``默认更改所有时间属性。
 
@@ -282,19 +282,19 @@
 
 &emsp;&emsp;默认语法：``mkdir 文件夹名``
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123102846.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123102846.png)
 
 &emsp;&emsp;``mkdir``还可以创建多级目录（创建路径）：
 
 &emsp;&emsp;``mkdir -p d1/d2/d3/d4``(其父目录不存在则先创建父目录)
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123103044.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123103044.png)
 
 &emsp;&emsp;在文件树上，创建文件本质就是插入叶子结点的过程。
 
 &emsp;&emsp;安装``tree``命令：``tree 目录名``是以树装结构查看目录内的信息，如下
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123103631.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123103631.png)
 
 &emsp;&emsp;先变身root，然后``yum install -y tree``，如果失败，说明要更新软件包，``yum install -y install epel-release``
 
@@ -306,11 +306,11 @@
 
 &emsp;&emsp;``rmdir 目录名``删除空目录，其实就是删除目录文件本身，如果目录非空会报错：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124170558.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124170558.png)
 
 &emsp;&emsp;``rm -r 目录名``，递归的删除这个目录以及这个目录内的文件，类似后续遍历删除二叉树，就可以删除非空目录。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123110006.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123110006.png)
 
 &emsp;&emsp;``rm 文件名``默认情况下，可以直接删除文件.
 
@@ -332,7 +332,7 @@
 
 &emsp;&emsp;``man``的选项这里我们介绍一些数字，``man number 查找的名字``就是在对应范围下查找，如``man 3 printf``查找库函数里头的``printf``使用手册。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123111123.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123111123.png)
 
 &emsp;&emsp;最常用的编号：1 命令 2 系统调用 3 库函数调用
 
@@ -342,7 +342,7 @@
 
 &emsp;&emsp;普通拷贝只能拷贝普通文件,无法拷贝目录中全部文件。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123112136.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123112136.png)
 
 &emsp;&emsp;``cp -r``递归拷贝，拷贝目录及目录中全部文件.
 
@@ -368,19 +368,19 @@
 
 &emsp;&emsp;剪切普通文件测试：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123112754.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123112754.png)
 
 &emsp;&emsp;剪切文件夹测试：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123112937.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123112937.png)
 
 &emsp;&emsp;普通文件重命名测试：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123112708.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123112708.png)
 
 &emsp;&emsp;目录文件重命名测试：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124185643.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124185643.png)
 
 &emsp;&emsp;还可以利用mv创建回收站，原理就是将``rm``改造成``mv``
 
@@ -410,11 +410,11 @@ count=0; while [ $count -le 1000 ]; do echo "hello ${count}"; let count++; done 
 
 &emsp;&emsp;查看文件内容，而非有修改权限，``cat -n``可以带上行号。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123113739.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123113739.png)
 
 &emsp;&emsp;``tac``输出的和cat命令顺序相反，``tac``：逆序输出文本内容，cat：正序输出文本内容。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123113718.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123113718.png)
 
 &emsp;&emsp;发现问题，大文本内容太多了，直接``cat``会刷屏。
 
@@ -426,17 +426,17 @@ count=0; while [ $count -le 1000 ]; do echo "hello ${count}"; let count++; done 
 
 &emsp;&emsp;``more -n``带行号查看。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124185625.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124185625.png)
 
 &emsp;&emsp;``more -5 文件名``先只看5行;
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124185559.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124185559.png)
 
 &emsp;&emsp;``more``的查找功能：
 
 &emsp;&emsp;在more中输入``/字符串``，就可以找到对应字符串附近的内容，不过只能向下查找：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124185544.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124185544.png)
 
 &emsp;&emsp;但是more只能下翻,只能向下查找，如果看过了想回头没法回头，还是很不方便。
 
@@ -450,9 +450,9 @@ count=0; while [ $count -le 1000 ]; do echo "hello ${count}"; let count++; done 
 
 &emsp;&emsp;``less``的查找验证：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124185523.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124185523.png)
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124185458.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124185458.png)
 
 选项： 
 
@@ -470,11 +470,11 @@ count=0; while [ $count -le 1000 ]; do echo "hello ${count}"; let count++; done 
 
 &emsp;&emsp;系统中存在各种日志，日志就是保存一些软件运行过程中的运行数据，写程序一般要带日志，比如用``ls /var/log/``查看日志文件：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124185427.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124185427.png)
 
 &emsp;&emsp;如看一下``yum.log``
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124185816.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124185816.png)
 
 &emsp;&emsp;日志就是一些保存软件运行过程中对应的运行数据的文本文件，有时候会很长，使用``less``或``more``查看为好，一般的软件都带着日志信息。
 
@@ -484,35 +484,35 @@ count=0; while [ $count -le 1000 ]; do echo "hello ${count}"; let count++; done 
 
 &emsp;&emsp;``tail 文件名``默认查看后10行，``tail -数字 文件名``查看后数字行。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123114935.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123114935.png)
 
 &emsp;&emsp;如何能查看中间区域呢？假设要查[100,120]行。
 
 &emsp;&emsp;``echo``指令默认输出空行，``echo 字符串``可以把字符串打印到标准输出上。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123115220.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123115220.png)
 
 &emsp;&emsp;可以按上或者按下找历史命令。
 
 &emsp;&emsp;我们把``echo``的输出不弄到标准输出去，弄到文件中，这类操作叫做**输出重定向**，如果目标文件不存在，会自动创建文件，如下：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123115334.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123115334.png)
 
 &emsp;&emsp;本来应该显示到标准输出的内容重定向写入了文件中。
 
 &emsp;&emsp;这条指令会覆盖原本的文件内容.
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123115631.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123115631.png)
 
 &emsp;&emsp;输出重定向会清空原始文件内容，然后重新写入。
 
 &emsp;&emsp;如果不想覆盖原本的内容，可以把``>``改为``>>``,这类操作称为**追加重定向**，
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123115847.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123115847.png)
 
 &emsp;&emsp;``cat``不加参数时，默认从标准输入，即键盘读取内容：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124190816.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124190816.png)
 
 &emsp;&emsp;同样也有输入重定向的操作：``cat < log.txt``把文件的内容作为原始数据输入到``cat``去。
 
@@ -522,31 +522,31 @@ cat < log.txt
 
 &emsp;&emsp;把``log.txt``输入到``cat``的默认参数标准输出。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123120151.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123120151.png)
 
 &emsp;&emsp;有了输入重定向，我们就可以查看局部文件了，原理就是先把结尾的行号加进去，``hear file.txt -120 > tmp.txt``
 
 &emsp;&emsp;然后``tail -20 tmp.txt``就能得到到指定范围。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123120904.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123120904.png)
 
 &emsp;&emsp;如果不想要创建中间文件呢？可以利用管道，这是一种进程互相通信的工具。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123120809.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123120809.png)
 
 &emsp;&emsp;或者这样写：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123121007.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123121007.png)
 
 &emsp;&emsp;正如现实中的管道一样，管道是用来传输资源的，这里的资源指数据，管道是有入口和出口的，管道可以把一个进程输出的数据交给另一个进程作为输入数据。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123121409.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123121409.png)
 
 &emsp;&emsp;使用管道时隐式的发生了重定向，本来``head -120 file.txt``要写到标准输出去，然后写到了管道里，本来``tail -20``要从标准输入或文件读的，从管道里读了,使用管道时，默认隐式发生了重定向。
 
 # date命令——显示时间相关的命令
 
-&emsp;&emsp;``date``显示年月日时分秒，采用的是格林威治形式显示：![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124191357.png)
+&emsp;&emsp;``date``显示年月日时分秒，采用的是格林威治形式显示：![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124191357.png)
 
 &emsp;&emsp;date 指定格式显示时间： ``date +%Y:%m:%d``,加后面是一个格式化字符串，特殊符号有以下含义：
 
@@ -559,7 +559,7 @@ cat < log.txt
 - %Y : 完整年份 (0000..9999)  
 - %F : 相当于 %Y-%m-%d
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123122009.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123122009.png)
 
 &emsp;&emsp;时间戳：Unix时间戳（英文为Unix epoch, Unix time, POSIX time 或 Unix timestamp）是从1970年1月1日（UTC/GMT的 午夜）开始所经过的秒数，不考虑闰秒，一种计算机计时的方法。
 
@@ -567,9 +567,9 @@ cat < log.txt
 
 &emsp;&emsp;时间戳转化为时间:``date +格式字符串 -d@时间戳``
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123122408.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123122408.png)
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220123122608.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220123122608.png)
 
 &emsp;&emsp;程序的日志其实就像人的日记，突然不写日志了，就可能就是服务器挂掉了。日志中也会记录自己出错的时候，为什么出错了。程序员可以通过查看日志来修服务器。
 
@@ -603,27 +603,27 @@ cat < log.txt
 
 &emsp;&emsp;默认情况下会显示本年当月的日历信息：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124133132.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124133132.png)
 
 &emsp;&emsp;``cal -y 年份``会把对应年份的日历显示出来(默认就是带``-y``的)
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124133359.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124133359.png)
 
 &emsp;&emsp;``cal -3``会把当前月，前一个月，后一个月的日历显示出来。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124133456.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124133456.png)
 
 # find命令—查找文件
 
 &emsp;&emsp;``which``本身就是一个查找可执行文件的命令。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124133921.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124133921.png)
 
 &emsp;&emsp;指令、程序、命令、工具这些东西的本质都是可执行程序，``windows``下的``.exe``,``Linux``下的文件属性为可执行文件的程序。
 
 &emsp;&emsp;**最常用语法**：``find 路径 -name``，根据名称查找指定文件。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124134814.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124134814.png)
 
 &emsp;&emsp;第一次查找可能会很卡，因为这条命令是会真的访问一个一个磁盘目录查找的，后续查找可能存在缓存，所以查找会很快。
 
@@ -676,35 +676,35 @@ find / -name '*.c'
 
 &emsp;&emsp;就可以这样``cat file.txt | grep '9'``
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124141325.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124141325.png)
 
 &emsp;&emsp;这里grep的作用就是行过滤工具。
 
 &emsp;&emsp;也可以不用管道，直接``grep '9' file.txt``
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124141536.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124141536.png)
 
 &emsp;&emsp;``grep -v``反向匹配，``grep -v '9' file.txt``,寻找不包含9的行：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124141742.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124141742.png)
 
 &emsp;&emsp;``grep -i``:首先利用``nano``修改一下内容：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124142000.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124142000.png)
 
 &emsp;&emsp;然后分别测试``grep "Router" file.txt``和``grep -i "Router" file.txt``:
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124142110.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124142110.png)
 
 &emsp;&emsp;``-i``大小写忽略，``-n``带行号。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124142313.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124142313.png)
 
 &emsp;&emsp;``grep``是支持正则表达式的。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124142612.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124142612.png)
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124142836.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124142836.png)
 
 # zip/unzip—打包压缩
 
@@ -714,7 +714,7 @@ find / -name '*.c'
 
 &emsp;&emsp;首先在命令行输入``zip``,如果没有出现下面的信息则运行``yum install -y zip``
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124143546.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124143546.png)
 
 &emsp;&emsp;运行``zip 2022_1_24.zip 2022_1_24``:
 
@@ -722,11 +722,11 @@ find / -name '*.c'
 
 &emsp;&emsp;把他放到test里取：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124143858.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124143858.png)
 
 &emsp;&emsp;使用``unzip``解压,发现目录里什么都没有。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124144128.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124144128.png)
 
 &emsp;&emsp;因为默认情况下zip只会对默认单个文件进行压缩。
 
@@ -736,11 +736,11 @@ find / -name '*.c'
 zip -r ziptest.zip 2022_1_24
 ```
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220124145355.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124145355.png" style="zoom:80%;" />
 
 &emsp;&emsp;解压到指定路径：``unzip 文件名 -d 路径``。
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220124145940.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124145940.png" style="zoom:80%;" />
 
 &emsp;&emsp;Windows中zip结尾的文件上传到Linux中也是支持的，因为它们采用的相同的压缩算法。
 
@@ -748,33 +748,33 @@ zip -r ziptest.zip 2022_1_24
 
 &emsp;&emsp;压缩语法：``tar 选项 目标压缩文件名 文件名``,文件名后缀一般叫``.tgz``
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220124150531.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124150531.png" style="zoom:80%;" />
 
 &emsp;&emsp;``tar``可以只打包不压缩，只要不带压缩算法就行：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124150907.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124150907.png)
 
 &emsp;&emsp;解压语法：``tar -xzvf 压缩文件名``
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124151603.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124151603.png)
 
 
 
 &emsp;&emsp;在不同环境可能增加选项有的要带-有的不用带。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124095515.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124095515.png)
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124095544.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124095544.png)
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124095558.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124095558.png)
 
 &emsp;&emsp;``-z``即采用zip算法压缩。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124095632.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124095632.png)
 
 &emsp;&emsp;``tar 选项 文件名 -C 路径名``解压文件到指定路径。
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124152038.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124152038.png)
 
 &emsp;&emsp;打包和压缩的区别：打包仅是把东西放一起，压缩是一种算法把装起来的东西打包的小一点。
 
@@ -782,13 +782,13 @@ zip -r ziptest.zip 2022_1_24
 
 &emsp;&emsp;可以进行浮点运算，可以用管道把需要运算的表达式给它：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124100929.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124100929.png)
 
 # Uname指令
 
 &emsp;&emsp;查看计算机信息与内核版本：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124101140.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124101140.png)
 
 &emsp;&emsp;``uname -r``查看内核版本。
 
@@ -796,11 +796,11 @@ zip -r ziptest.zip 2022_1_24
 
 &emsp;&emsp;内核版本 ``3.10.0***``，3表示主版本，``10``表示次版本,``**``是偶数是表示稳定发行版，次版本号是奇数表示测试版，el7表示它属于``Centos7``,x86_64表示计算机的体系结构，使用的CPU平台是x86_64.
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124101041.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124101041.png)
 
 &emsp;&emsp;如果要查看发型版本：``cat /etc/redhat-release``
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124101439.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124101439.png)
 
 &emsp;&emsp;服务器上的操作系统需要给用户提供稳定安全的服务，操作系统版本更新引入新特性很可能带来新问题，所以服务器选择操作系统内核版本选择合适（一般比较低）当前业务且经典的。
 
@@ -808,19 +808,19 @@ zip -r ziptest.zip 2022_1_24
 
 ``tab``：如果有指令想不起来了，只记得几个字母，可以输入这几个字母再按tab，tab一下不行就tab两下。就会把以这些字母开头的命令战术出来：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124102910.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124102910.png)
 
 ``ctrl r``:按``ctrl r``后进入下面界面：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124153020.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124153020.png)
 
 输入指令的前几个字母，它会把你用过的历史指令显示出来：
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124153116.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124153116.png)
 
 然后随便按一下左右键就会回到命令行
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124153233.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124153233.png)
 
 ``ctrl c``:终止正在运行的程序。
 
@@ -830,11 +830,11 @@ zip -r ziptest.zip 2022_1_24
 
 ``history``可以查看使用过的命令：
 
-<img src="https://gitee.com/router123456/drawing-bed/raw/master/img/20220124152436.png" style="zoom:80%;" />
+<img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124152436.png" style="zoom:80%;" />
 
 ``file``查看文件具体信息
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220124153526.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220124153526.png)
 
 # 关机重启
 
@@ -859,7 +859,7 @@ zip -r ziptest.zip 2022_1_24
 -z:尝试解读压缩文件的内容
 ```
 
-![](https://gitee.com/router123456/drawing-bed/raw/master/img/20220218110512.png)
+![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/img/20220218110512.png)
 
 
 
